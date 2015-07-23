@@ -234,3 +234,64 @@ NoMethodError (undefined method `authenticate_dog' for #<SiteController:0x007fce
   Rendered /Users/kaykayyali/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/kaykayyali/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
   Rendered /Users/kaykayyali/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (219.8ms)
+
+
+Started GET "/" for ::1 at 2015-07-23 10:06:40 -0400
+Processing by SiteController#home as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dogs/sign_in" for ::1 at 2015-07-23 10:06:41 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/kaykayyali/.rvm/gems/ruby-2.2.0/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (2.8ms)
+  Rendered /Users/kaykayyali/.rvm/gems/ruby-2.2.0/gems/devise-3.5.1/app/views/devise/sessions/new.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 492ms (Views: 451.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-23 10:06:41 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-23 10:06:41 -0400
+
+
+Started GET "/assets/site.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-23 10:06:41 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-23 10:06:41 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-23 10:06:41 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-23 10:06:41 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-23 10:06:41 -0400
+
+
+Started GET "/dogs/sign_up" for ::1 at 2015-07-23 10:06:43 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/kaykayyali/.rvm/gems/ruby-2.2.0/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/kaykayyali/.rvm/gems/ruby-2.2.0/gems/devise-3.5.1/app/views/devise/registrations/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dogs" for ::1 at 2015-07-23 10:06:53 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d+JmT+WNAwos/r8RYgyKzWtYzLuWBT1Z0hMBkocDcCAmOn9fr/71X5r/WH6jAPFc/BjKq9xi2AMNyVlcWyAe3w==", "dog"=>{"email"=>"kaykayyali@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mDog Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "dogs" WHERE "dogs"."email" = 'kaykayyali@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "dogs" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "kaykayyali@gmail.com"], ["encrypted_password", "$2a$10$Ifd6/VfS9apVSDAPs/roGeqbPyIIjyv0fDAoXiyp.2uw99iQW1Sau"], ["created_at", "2015-07-23 14:06:53.657640"], ["updated_at", "2015-07-23 14:06:53.657640"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "dogs" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "dogs"."id" = ?[0m  [["last_sign_in_at", "2015-07-23 14:06:53.664395"], ["current_sign_in_at", "2015-07-23 14:06:53.664395"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-07-23 14:06:53.665897"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2015-07-23 10:06:53 -0400
+Processing by SiteController#home as HTML
+  [1m[36mDog Load (0.3ms)[0m  [1mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ?  ORDER BY "dogs"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered site/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 68ms (Views: 64.9ms | ActiveRecord: 0.3ms)
